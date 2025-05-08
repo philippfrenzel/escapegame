@@ -40,7 +40,7 @@
     button {
       padding: 0.5rem 1rem;
       font-size: 1rem;
-      margin-left: 0.5rem;
+      margin-top: 1rem;
       cursor: pointer;
     }
     .timer {
@@ -57,37 +57,51 @@
 <body>
 
 <div id="steps-container">
-  <div class="step active" id="step-0" style="background-image: url('bg1.jpg');">
+  <!-- Einleitung -->
+  <div class="step active" id="step-0" style="background-image: url('intro.jpg');">
+    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="task-box">
+      <h2>Willkommen zum Escape Game!</h2>
+      <p>Mr. Ba Dadda hat Swicalino entführt! Nur durch das Lösen aller Rätsel kannst du ihn retten.</p>
+      <button onclick="goToStep(1)">Starte das Spiel</button>
+    </div>
+  </div>
+
+  <!-- Schritt 1 -->
+  <div class="step" id="step-1" style="background-image: url('bg1.jpg');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>Rätsel 1</h2>
       <p>Wie viele Zeilen enthält der Outport „pinguin-tracker“?</p>
-      <input type="number" id="input-0" />
-      <button onclick="checkAnswer(0)">Prüfen</button>
-    </div>
-  </div>
-
-  <div class="step" id="step-1" style="background-image: url('bg2.jpg');">
-    <div class="timer" id="timer">Zeit: 10:00</div>
-    <div class="task-box">
-      <h2>Rätsel 2</h2>
-      <p>Wie viele Berechtigungen hat Swicalino auf die Workbench „arktische-bewegungsdaten“?</p>
       <input type="number" id="input-1" />
       <button onclick="checkAnswer(1)">Prüfen</button>
     </div>
   </div>
 
-  <div class="step" id="step-2" style="background-image: url('bg3.jpg');">
+  <!-- Schritt 2 -->
+  <div class="step" id="step-2" style="background-image: url('bg2.jpg');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
-      <h2>Letztes Rätsel</h2>
-      <p>Wie viele Schritte hat Swicalino unbemerkt zurückgelegt?</p>
+      <h2>Rätsel 2</h2>
+      <p>Wie viele Berechtigungen hat Swicalino auf die Workbench „arktische-bewegungsdaten“?</p>
       <input type="number" id="input-2" />
       <button onclick="checkAnswer(2)">Prüfen</button>
     </div>
   </div>
 
-  <div class="step" id="step-3" style="background-image: url('treasure.jpg');">
+  <!-- Schritt 3 -->
+  <div class="step" id="step-3" style="background-image: url('bg3.jpg');">
+    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="task-box">
+      <h2>Letztes Rätsel</h2>
+      <p>Wie viele Schritte hat Swicalino unbemerkt zurückgelegt?</p>
+      <input type="number" id="input-3" />
+      <button onclick="checkAnswer(3)">Prüfen</button>
+    </div>
+  </div>
+
+  <!-- Schatzbox -->
+  <div class="step" id="step-4" style="background-image: url('treasure.jpg');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>🎉 Du hast Swicalino gerettet!</h2>
@@ -95,6 +109,7 @@
     </div>
   </div>
 
+  <!-- Game Over -->
   <div class="step" id="step-fail" style="background-color: black; color: red; display: none;">
     <div class="task-box">
       <h2>⏳ Zeit abgelaufen!</h2>
@@ -104,8 +119,8 @@
 </div>
 
 <script>
-  const correctCodes = [4312, 2190, 7324];
-  let timeLeft = 10 * 60; // 10 Minuten
+  const correctCodes = [null, 4312, 2190, 7324];
+  let timeLeft = 10 * 60;
   let timerInterval;
 
   function updateTimerDisplay() {
@@ -127,11 +142,16 @@
     }, 1000);
   }
 
+  function goToStep(stepIndex) {
+    document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+    const next = document.getElementById(`step-${stepIndex}`);
+    if (next) next.classList.add('active');
+  }
+
   function checkAnswer(stepIndex) {
     const input = document.getElementById(`input-${stepIndex}`).value;
     if (parseInt(input) === correctCodes[stepIndex]) {
-      document.getElementById(`step-${stepIndex}`).classList.remove('active');
-      document.getElementById(`step-${stepIndex + 1}`).classList.add('active');
+      goToStep(stepIndex + 1);
     } else {
       alert("Falscher Code. Versuche es erneut.");
     }
