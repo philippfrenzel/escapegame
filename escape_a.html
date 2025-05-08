@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Escape Game – Swicalino retten!</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: sans-serif;
+      height: 100%;
+      overflow: hidden;
+    }
+    .step {
+      display: none;
+      height: 100vh;
+      width: 100vw;
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 2rem;
+      box-sizing: border-box;
+      position: relative;
+    }
+    .step.active {
+      display: block;
+    }
+    .task-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      max-width: 600px;
+    }
+    input[type="number"] {
+      padding: 0.5rem;
+      font-size: 1.2rem;
+      width: 100px;
+    }
+    button {
+      padding: 0.5rem 1rem;
+      font-size: 1rem;
+      margin-left: 0.5rem;
+      cursor: pointer;
+    }
+    .timer {
+      position: absolute;
+      top: 1rem;
+      right: 2rem;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+<body>
+
+<div id="steps-container">
+  <div class="step active" id="step-0" style="background-image: url('bg1.jpg');">
+    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="task-box">
+      <h2>Rätsel 1</h2>
+      <p>Wie viele Zeilen enthält der Outport „pinguin-tracker“?</p>
+      <input type="number" id="input-0" />
+      <button onclick="checkAnswer(0)">Prüfen</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-1" style="background-image: url('bg2.jpg');">
+    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="task-box">
+      <h2>Rätsel 2</h2>
+      <p>Wie viele Berechtigungen hat Swicalino auf die Workbench „arktische-bewegungsdaten“?</p>
+      <input type="number" id="input-1" />
+      <button onclick="checkAnswer(1)">Prüfen</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-2" style="background-image: url('bg3.jpg');">
+    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="task-box">
+      <h2>Letztes Rätsel</h2>
+      <p>Wie viele Schritte hat Swicalino unbemerkt zurückgelegt?</p>
+      <input type="number" id="input-2" />
+      <button onclick="checkAnswer(2)">Prüfen</button>
+    </div>
+  </div>
+
+  <div class="step" id="step-3" style="background-image: url('treasure.jpg');">
+    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="task-box">
+      <h2>🎉 Du hast Swicalino gerettet!</h2>
+      <p>Nutze den finalen 4-stelligen Code und öffne die Schatzbox!</p>
+    </div>
+  </div>
+
+  <div class="step" id="step-fail" style="background-color: black; color: red; display: none;">
+    <div class="task-box">
+      <h2>⏳ Zeit abgelaufen!</h2>
+      <p>Mr. Ba Dadda hat gewonnen... Swicalino bleibt gefangen. Versuche es erneut!</p>
+    </div>
+  </div>
+</div>
+
+<script>
+  const correctCodes = [4312, 2190, 7324];
+  let timeLeft = 10 * 60; // 10 Minuten
+  let timerInterval;
+
+  function updateTimerDisplay() {
+    const minutes = Math.floor(timeLeft / 60).toString().padStart(2, '0');
+    const seconds = (timeLeft % 60).toString().padStart(2, '0');
+    const timerElements = document.querySelectorAll('#timer');
+    timerElements.forEach(el => el.textContent = `Zeit: ${minutes}:${seconds}`);
+  }
+
+  function startTimer() {
+    updateTimerDisplay();
+    timerInterval = setInterval(() => {
+      timeLeft--;
+      updateTimerDisplay();
+      if (timeLeft <= 0) {
+        clearInterval(timerInterval);
+        endGame();
+      }
+    }, 1000);
+  }
+
+  function checkAnswer(stepIndex) {
+    const input = document.getElementById(`input-${stepIndex}`).value;
+    if (parseInt(input) === correctCodes[stepIndex]) {
+      document.getElementById(`step-${stepIndex}`).classList.remove('active');
+      document.getElementById(`step-${stepIndex + 1}`).classList.add('active');
+    } else {
+      alert("Falscher Code. Versuche es erneut.");
+    }
+  }
+
+  function endGame() {
+    document.querySelectorAll('.step').forEach(step => step.classList.remove('active'));
+    document.getElementById('step-fail').style.display = 'block';
+  }
+
+  window.onload = startTimer;
+</script>
+
+</body>
+</html>
