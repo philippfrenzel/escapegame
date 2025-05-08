@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Escape Game – Admin Seite</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 2rem;
+    }
+    h1 {
+      text-align: center;
+    }
+    .difficulty-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 400px;
+      margin: 2rem auto;
+    }
+    .difficulty-list a {
+      display: block;
+      text-align: center;
+      padding: 1rem;
+      background-color: #333;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1.2rem;
+      transition: background 0.3s;
+    }
+    .difficulty-list a:hover {
+      background-color: #555;
+    }
+  </style>
+</head>
+<body>
+  <h1>Escape Game – Admin Steuerung</h1>
+  <div class="difficulty-list">
+    <a href="escape_a.html">🟢 Einfach (A)</a>
+    <a href="escape_b.html">🟡 Mittel (B)</a>
+    <a href="escape_c.html">🟠 Schwer (C)</a>
+    <a href="escape_d.html">🔴 Extrem (D)</a>
+  </div>
+</body>
+</html>
