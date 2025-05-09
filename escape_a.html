@@ -87,17 +87,28 @@
   </div>
 
   <!-- Schritt 2 -->
-  <div class="step" id="step-2" style="background-image: url('bg2.jpg');">
+  <div class="step" id="step-2" style="background-image: url('gfx_a/ec_b_gehilfe.png');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>Rätsel 2</h2>
-      <p>Wie viele Berechtigungen hat Swicalino auf die Workbench „arktische-bewegungsdaten“?</p>
+      <p>Dr. Agon Fly hat herausgefunden, das Mr Ba Dadda einen Gehilfen in sein Team eingeschläusst hat? Finde den Spion und kontaktiere Ihn direkt um den nächsten Hinweis zu finden!</p>
       <input type="number" id="input-2" />
       <button onclick="checkAnswer(2)">Prüfen</button>
     </div>
   </div>
 
   <!-- Schritt 3 -->
+  <div class="step" id="step-3" style="background-image: url('bg3.jpg');">
+    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="task-box">
+      <h2>Rätsel 3</h2>
+      <p>Wie viele Schritte hat Swicalino unbemerkt zurückgelegt?</p>
+      <input type="number" id="input-3" />
+      <button onclick="checkAnswer(3)">Prüfen</button>
+    </div>
+  </div>
+
+  <!-- Schritt 4 -->
   <div class="step" id="step-3" style="background-image: url('bg3.jpg');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
@@ -113,7 +124,7 @@
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>🎉 Du hast Swicalino gerettet!</h2>
-      <p>Nutze den finalen 4-stelligen Code und öffne die Schatzbox!</p>
+      <p>Nutze die Codes aus allen Rätseln und öffne die Schatzbox!</p>
     </div>
   </div>
 
@@ -127,7 +138,7 @@
 </div>
 
 <script>
-  const correctCodes = [null, 39, 2190, 7324];
+  const correctCodes = [null, 39, 7, 2190, 7324];
   let timeLeft = 10 * 60;
   let timerInterval;
 
