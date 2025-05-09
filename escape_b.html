@@ -76,40 +76,40 @@
   </div>
 
   <!-- Schritt 1 -->
-  <div class="step" id="step-1" style="background-image: url('gfx_a/ec_a_client_or_pbi.png');">
+  <div class="step" id="step-1" style="background-image: url('gfx_b/ec_a_swicatron.png');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>Rätsel 1</h2>
-      <p>Mr Ba Dadda, hat SWICALINO entführt. Um Ihn zu retten müsst ihr herausfinden, an wievielen Orten er sich versteck halten könnte - wie viele Workbenches befinden sich in der Dragonfly Produktion?</p>
+      <p>Mr. Ba Dadda hat die Energiequelle des Teams gestohlen und mit einem geheimen Passwort verschlüsselt. Ausserdem hat er sie tief in den Schatten der Datenplattform versteckt. Kannst du die Energiequelle „Swicatron” finden und in ihrer Nähe das Lösungswort ableiten? Merke dir die letzten beiden Buchstaben des Lösungsworts. Kannst du irgendwo eine Referenz von Buchstabe zu Lösungscode finden? Addiere die beiden Zahlen.</p>
       <input type="number" id="input-1" />
       <button onclick="checkAnswer(1)">Prüfen</button>
     </div>
   </div>
 
   <!-- Schritt 2 -->
-  <div class="step" id="step-2" style="background-image: url('bg2.jpg');">
+  <div class="step" id="step-2" style="background-image: url('gfx_a/ec_b_outlook.png');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>Rätsel 2</h2>
-      <p>Wie viele Berechtigungen hat Swicalino auf die Workbench „arktische-bewegungsdaten“?</p>
+      <p>Der Weg zur Rettung von Swicalino führt nun in die Tiefe der zeitgesteuerten Automationen … Mr. Ba Dadda hat das Datenprodukt dp-swicalino manipuliert und an einen zeitbasierten Rhythmus gebunden. Nur wer versteht, wie oft dieses Datenprodukt bis zum Ende des Jahres noch ausgeführt wird, kann den nächsten Zahlencode entschlüsseln.</p>
       <input type="number" id="input-2" />
       <button onclick="checkAnswer(2)">Prüfen</button>
     </div>
   </div>
 
   <!-- Schritt 3 -->
-  <div class="step" id="step-3" style="background-image: url('bg3.jpg');">
+  <div class="step" id="step-3" style="background-image: url('gfx_a/ec_b_gehilfe.png');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>Letztes Rätsel</h2>
-      <p>Wie viele Schritte hat Swicalino unbemerkt zurückgelegt?</p>
+      <p>Die Rettung von Swicalino führt euch dieses Mal an einen Ort, der euch vertraut vorkommt. Euren eigenen Team-Corner. Doch hier stimmt etwas nicht… Picolino hat euch ein Foto von sich als Hinweis hinterlassen. Kannst du den Lösungscode erkennen?</p>
       <input type="number" id="input-3" />
       <button onclick="checkAnswer(3)">Prüfen</button>
     </div>
   </div>
 
   <!-- Schatzbox -->
-  <div class="step" id="step-4" style="background-image: url('treasure.jpg');">
+  <div class="step" id="step-4" style="background-image: url('gfx_a/ec_b_finished.png');">
     <div class="timer" id="timer">Zeit: 10:00</div>
     <div class="task-box">
       <h2>🎉 Du hast Swicalino gerettet!</h2>
@@ -127,7 +127,7 @@
 </div>
 
 <script>
-  const correctCodes = [null, 39, 2190, 7324];
+  const correctCodes = [null, 5, 33, 9];
   let timeLeft = 10 * 60;
   let timerInterval;
 
