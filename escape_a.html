@@ -67,17 +67,18 @@
 <div id="steps-container">
   <!-- Einleitung -->
   <div class="step active" id="step-0" style="background-image: url('gfx_a/intro.png');">
-    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="timer" id="timer">Zeit: 20:00</div>
     <div class="task-box">
       <h2>Willkommen zum Dragonfly Escape Game!</h2>
       <p>Mr. Ba Dadda hat Swicalino entführt! Nur durch das Lösen aller Rätsel kannst du ihn retten.</p>
+      <p>Dieses Escape Game wird dich in die Welt von Dr. Agon Fly und ersten Funktionen der Datenplattform einführen.</p>
       <button onclick="goToStep(1)">Starte das Spiel</button>
     </div>
   </div>
 
   <!-- Schritt 1 -->
   <div class="step" id="step-1" style="background-image: url('gfx_a/ec_a_client_or_pbi.png');">
-    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="timer" id="timer">Zeit: 20:00</div>
     <div class="task-box">
       <h2>Rätsel 1</h2>
       <p>Mr Ba Dadda, hat SWICALINO entführt. Um Ihn zu retten müsst ihr herausfinden, an wievielen Orten er sich versteck halten könnte - wie viele Workbenches befinden sich in der Dragonfly Produktion?</p>
@@ -88,7 +89,7 @@
 
   <!-- Schritt 2 -->
   <div class="step" id="step-2" style="background-image: url('gfx_a/ec_b_gehilfe.png');">
-    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="timer" id="timer">Zeit: 20:00</div>
     <div class="task-box">
       <h2>Rätsel 2</h2>
       <p>Dr. Agon Fly hat herausgefunden, dass Mr Ba Dadda einen Gehilfen in sein Team eingeschläusst hat? Finde den Spion und kontaktiere Ihn direkt um den nächsten Hinweis zu finden!</p>
@@ -99,7 +100,7 @@
 
   <!-- Schritt 3 -->
   <div class="step" id="step-3" style="background-image: url('gfx_a/ec_b_finanzen.png');">
-    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="timer" id="timer">Zeit: 20:00</div>
     <div class="task-box">
       <h2>Rätsel 3</h2>
       <p>Um die Suche nach SWICALINO finanzieren zu können, muss Dr. Agon Fly sein Guthaben an Gold Outports prüfen? Er innert sich dass er den Zugang zum Safe im Postfach "Azure_DFLY_Prod_Dfwb_Platform-Monitoring_RPC" hinterlegt hat.</p>
@@ -110,7 +111,7 @@
 
   <!-- Schritt 4 -->
   <div class="step" id="step-4" style="background-image: url('gfx_a/ec_b_outlook.png');">
-    <div class="timer" id="timer">Zeit: 10:00</div>
+    <div class="timer" id="timer">Zeit: 20:00</div>
     <div class="task-box">
       <h2>Letztes Rätsel</h2>
       <p>Mr Ba Dadda hat den Product Owner der Dragonfly Plattform gezwungen SWICALINO festzuhalten? Damit niemand ausversehen SWICALINO findet, hat er den Ort aktuell gebucht. Bevor du springst um SWICALION zu befreien, prüfe die Raumnummer...</p>
@@ -139,7 +140,7 @@
 
 <script>
   const correctCodes = [null, 38, 7, 1, 348];
-  let timeLeft = 10 * 60;
+  let timeLeft = 20 * 60;
   let timerInterval;
 
   function updateTimerDisplay() {
