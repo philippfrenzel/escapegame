@@ -87,29 +87,29 @@
   </div>
 
   <!-- Schritt 2 -->
-  <div class="step" id="step-2" style="background-image: url('gfx_a/ec_b_outlook.png');">
-    <div class="timer" id="timer">Zeit: 25:00</div>
+  <div class="step" id="step-2" style="background-image: url('gfx_a/ec_b_gehilfe.png');">
+    <div class="timer" id="timer">Zeit: 20:00</div>
     <div class="task-box">
       <h2>Rätsel 2</h2>
-      <p>Der Weg zur Rettung von Swicalino führt nun in die Tiefe der zeitgesteuerten Automationen … Mr. Ba Dadda hat das Datenprodukt dp-swicalino manipuliert und an einen zeitbasierten Rhythmus gebunden. Nur wer versteht, wie oft dieses Datenprodukt bis zum Ende des Jahres noch ausgeführt wird, kann den nächsten Zahlencode entschlüsseln.</p>
+      <p>Dr. Agon Fly hat herausgefunden, dass Mr Ba Dadda einen Gehilfen in sein Team eingeschläusst hat? Finde den Spion und kontaktiere Ihn direkt um den nächsten Hinweis zu finden!</p>
       <input type="number" id="input-2" />
       <button onclick="checkAnswer(2)">Prüfen</button>
     </div>
   </div>
 
   <!-- Schritt 3 -->
-  <div class="step" id="step-3" style="background-image: url('gfx_a/ec_b_gehilfe.png');">
+  <div class="step" id="step-3" style="background-image: url('gfx_a/ec_b_outlook.png');">
     <div class="timer" id="timer">Zeit: 25:00</div>
     <div class="task-box">
       <h2>Rätsel 3</h2>
-      <p>Die Rettung von Swicalino führt euch dieses Mal an einen Ort, der euch vertraut vorkommt. Dr. Agon Fly's eigenen Team-Corner. Doch hier stimmt etwas nicht… Picolino hat euch ein Foto von sich als Hinweis hinterlassen. Kannst du den Lösungscode erkennen?</p>
+      <p>Der Weg zur Rettung von Swicalino führt nun in die Tiefe der zeitgesteuerten Automationen … Mr. Ba Dadda hat das Datenprodukt dp-swicalino manipuliert und an einen zeitbasierten Rhythmus gebunden. Nur wer versteht, wie oft dieses Datenprodukt bis zum Ende des Jahres noch ausgeführt wird, kann den nächsten Zahlencode entschlüsseln.</p>
       <input type="number" id="input-3" />
       <button onclick="checkAnswer(3)">Prüfen</button>
     </div>
   </div>
 
   <!-- Schritt 4 -->
-  <div class="step" id="step-4" style="background-image: url('gfx_b/ec_b_cloudanalyse.png');">
+  <div class="step" id="step-4" style="background-image: url('gfx_a/ec_b_gehilfe.png');">
     <div class="timer" id="timer">Zeit: 25:00</div>
     <div class="task-box">
       <h2>Rätsel 4</h2>
@@ -119,8 +119,30 @@
     </div>
   </div>
 
+  <!-- Schritt 5 -->
+  <div class="step" id="step-5" style="background-image: url('gfx_b/ec_b_cloudanalyse.png');">
+    <div class="timer" id="timer">Zeit: 25:00</div>
+    <div class="task-box">
+      <h2>Rätsel 5</h2>
+      <p></p>
+      <input type="number" id="input-5" />
+      <button onclick="checkAnswer(5)">Prüfen</button>
+    </div>
+  </div>
+
+  <!-- Schritt 6 -->
+  <div class="step" id="step-6" style="background-image: url('gfx_a/ec_b_outlook.png');">
+    <div class="timer" id="timer">Zeit: 20:00</div>
+    <div class="task-box">
+      <h2>Letztes Rätsel</h2>
+      <p>Mr Ba Dadda hat den Product Owner der Dragonfly Plattform gezwungen SWICALINO festzuhalten? Damit niemand ausversehen SWICALINO findet, hat er den Ort aktuell gebucht. Bevor du springst um SWICALION zu befreien, prüfe die Raumnummer...</p>
+      <input type="number" id="input-6" />
+      <button onclick="checkAnswer(6)">Prüfen</button>
+    </div>
+  </div>
+
   <!-- Schatzbox -->
-  <div class="step" id="step-5" style="background-image: url('gfx_a/ec_b_finished.png');">
+  <div class="step" id="step-7" style="background-image: url('gfx_a/ec_b_finished.png');">
     <div class="timer" id="timer">Zeit: 25:00</div>
     <div class="task-box">
       <h2>🎉 Du hast Swicalino gerettet!</h2>
@@ -138,7 +160,7 @@
 </div>
 
 <script>
-  const correctCodes = [null, 5, 33, 9];
+  const correctCodes = [null, 5, 7, 33, 9, 348];
   let timeLeft = 25 * 60; // 25 Minuten in Sekunden
   let timerInterval;
 
